@@ -119,3 +119,14 @@ main{
       color: red;
 }
 
+.main{
+      width: 75%;
+      margin: 30px auto;
+}
+
+.fav-container{
+      /* justify-content: space-between; */
+      flex-wrap: wrap;
+  
+      
+}

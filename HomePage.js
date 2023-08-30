@@ -7,19 +7,68 @@ var searchInput = document.getElementById("search-input");
 const favButton = document.getElementById("fav-button");
 
 
-// favButton.addEventListener("click", favrouitMoviePage());
+
+const singleMovie = async ()=>{
+  // find id from url
+  let urlQueryParameters = new URLSearchParams(window.location.search);
+  let id = urlQueryParameters.get("id");
+  console.log(id)
+  const fetchUrl = `http://www.omdbapi.com/?i=${id}&apikey=${api_key}`;
+  const res = await fetch(fetchUrl);
+  const movie = await res.json();
+  console.log(movie);
 
 
-async function favrouitMoviePage(){
-  window.location.assign("favorite.html"); 
-  // key is the title;
-    for(let i=0; i<localStorage.length; i++){
-      let key = localStorage.key(i); // title of movie
-      const res = await fetch(`${url}${api_key}&s=${key}`);
-    const movies = await res.json();
-    console.log(movies.Search);
+}
+
+
+
+ async function favrouietMoviePage(){
+  // window.location.assign("favorite.html"); 
+  const favContainer = document.getElementById("fav-container");
+  var favOutput = '';
+    // get the key stored in local storage
+    for(var i=0; i<localStorage.length; i++){
       
+      let key = localStorage.key(i);
+      // console.log(key);
+      const fetchUrl = `http://www.omdbapi.com/?i=${key}&apikey=${api_key}`;
+      const res = await fetch(fetchUrl);
+      const movie = await res.json();
+      // console.log(movie);
+      var imgUrl = "";
+      if (movie.Poster != "N/A") {
+        imgUrl = movie.Poster;
+      } else {
+        imgUrl = "./assets/blankPoster.jpg"
+      }
+  
+
+      favOutput += `<div class="card ">
+                  <div class="card-poster">
+                  <a href="movie.html?id=${key}" >  <img src= "${imgUrl}"  alt="Movie Poster"/></a>
+                 
+                  </div>
+               <h1>Title: ${movie.Title}</h1>
+               <div class="flex card-info">
+            <p>Year: ${movie.Year}</p>
+         <button  onClick="removeFav('${key}')"> remove </button>
+            
+            </div>
+
+            </div>`
+
+            
     }
+      favContainer.innerHTML = favOutput;
+   
+}
+
+function removeFav(id){
+  // console.log(id)
+  localStorage.removeItem(id);
+  alert("Removed from Favorite");
+  window.location.reload();
 }
 
 async function fetchMovies(query) {
@@ -30,7 +79,7 @@ async function fetchMovies(query) {
 
 function addTofavrouitMovie(id, title){
   console.log("id:" + id);
-  localStorage.setItem(title, id);
+  localStorage.setItem(id, title);
   alert("Movie Added to favrouites");
   // document.getElementById("fav-icon").classList.add("fav-icon");
 }
