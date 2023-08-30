@@ -1,91 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="home.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-      <title>Document</title>
-
-</head>
-<body>
-      <!-- <header id="nav">
-            <div class="logo">
-
-                  <a href=""><img src="assets/imdb.png" alt=""></a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="HomePage.css">
+    <!-- font-awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+   
+    <title>Cinema flix</title>
+    <!-- bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar d-flex container">
+        <div class="logo-img">
+          <img src="assets/imdb.png" alt="" />
+        </div>
+        <div class="search-bar-container">
+            <div class="search-bar">
+                  <span>  <i class="fas fa-search"></i></span>
+                  <input type="text" class="search-input " name="" id="search-input" placeholder="Search Movie Here..."/>
+                    
+                
             </div>
-            <div class="search">
+        </div>
+        <div class="fav-button">
+          <button class="button" id="fav-button" onclick="favrouitMoviePage()">Favorite</button>
+        </div>
+      </div>
+    </nav>
 
-                  <i class="fas fa-lg fa-search"></i>
-                  <input type="text" name="" id="search-bar">
+    <main>
+      <div id="cards-container" class="cards-container container d-flex">
+            
+      </div>
+    </main>
+
+
+
+    <!-- <template id="template-news-card">
+      <div class="card">
+            <div class="card-header">
+                  <img src="https://via.placeholder.com/400x200" alt="news image" id="news-img">
             </div>
-            <div class="fav-movie">
-                  <button type="submit" class="text-icon-btn"><img src="assets/favourites-folder.png" alt=""> <span>Favrouite Movies</span> </button>
-            </div>
-      </header>
+            <div class="card-content">
+                  <h3 id="news-title">This is the title</h3>
+                  <h6 class="news-year" id="news-year">End Gadget 24/08/2023</h6>
+                 <p id="news-desc" class="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, nihil! Optio consectetur ipsam unde ipsa dolorem officiis harum sit dolores?</p> -->
+            <!-- </div>
+      </div>
 
-      <main id="movie-card-container">
-            <div class="movie-card">
-                  <img src="assets/bloody-daddy-16x9-1687775864575.avif" alt="">
-         
-            <div class="movie-title-container">
-                  <span>name of movie</span>
-                  <div class="rating-container">
-                        <img src="assets/rating-icon.png" alt="">
-                        <span>7.5</span>
-                  </div>
+    </template>  -->
 
-            </div>
-            <button type="submit" class="text-icon-btn fav-btn" ><img src="assets/favourites-folder.png" alt=""> <span>Favrouite Movies</span> </button>
-
-            </div>
-
-
-            <div class="movie-card">
-                  <img src="assets/bloody-daddy-16x9-1687775864575.avif" alt="">
-         
-            <div class="movie-title-container">
-                  <span>name of movie</span>
-                  <div class="rating-container">
-                        <img src="assets/rating-icon.png" alt="">
-                        <span>7.5</span>
-                  </div>
-
-            </div>
-            <button type="submit" class="text-icon-btn fav-btn" ><img src="assets/favourites-folder.png" alt=""> <span>Favrouite Movies</span> </button>
-
-            </div>
-
-
-            <div class="movie-card">
-                  <img src="assets/bloody-daddy-16x9-1687775864575.avif" alt="">
-         
-            <div class="movie-title-container">
-                  <span>name of movie</span>
-                  <div class="rating-container">
-                        <img src="assets/rating-icon.png" alt="">
-                        <span>7.5</span>
-                  </div>
-
-            </div>
-            <button type="submit" class="text-icon-btn fav-btn" ><img src="assets/favourites-folder.png" alt=""> <span>Favrouite Movies</span> </button>
-
-            </div>
-      </main> -->
-
-
-
-
-      <div id="search-bar">
+    <!-- <div id="search-bar">
+            <h1 id="search-h">IMDB</h1>
             <form id="search-form" action="">
                   <input type="text" id="text-input" placeholder="Search IMDB">
             </form>
       </div>
 
-      <div id="movies-grid"></div>
+      <div>
+            <h1 id="category-title">Now Playing Movies</h1>
+      </div>
 
+      <div id="movies-grid"></div> -->
 
-      <script src="script.js"></script>
-      
-</body>
+    <!-- <script src="script.js"></script> -->
+    <script src="HomePage.js" ></script>
+  </body>
 </html>

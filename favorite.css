@@ -1,0 +1,13 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+/* 
+.banner {
+      background-image: url("./assets/theaterImg.jpg");
+      object-fit: cover;
+      background-repeat: no-repeat;
+      width: 100vw;
+      height: 50vh;
+} */
