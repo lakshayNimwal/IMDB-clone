@@ -12,11 +12,48 @@ const singleMovie = async ()=>{
   // find id from url
   let urlQueryParameters = new URLSearchParams(window.location.search);
   let id = urlQueryParameters.get("id");
-  console.log(id)
+  // console.log(id)
   const fetchUrl = `http://www.omdbapi.com/?i=${id}&apikey=${api_key}`;
   const res = await fetch(fetchUrl);
-  const movie = await res.json();
-  console.log(movie);
+  const data = await res.json();
+  // console.log(data);
+  var output = `
+
+  <div class="movie-poster">
+      <img src=${data.Poster} alt="Movie Poster">
+  </div>
+  <div class="movie-details">
+      <div class="details-header">
+          <div class="dh-ls">
+              <h2>${data.Title}</h2>
+          </div>
+          <div class="dh-rs">
+              <i class="fa-solid fa-bookmark" onClick=addTofavorites('${id}') style="cursor: pointer;"></i>
+          </div>
+      </div>
+      <span class="italics-text"><i>${data.Year} &#x2022; ${data.Country} &#x2022; Rating - <span
+                  style="font-size: 18px; font-weight: 600;">${data.imdbRating}</span>/10 </i></span>
+      <ul class="details-ul">
+          <li><strong>Actors: </strong>${data.Actors}</li>
+          <li><strong>Director: </strong>${data.Director}</li>
+          <li><strong>Writers: </strong>${data.Writer}</li>
+      </ul>
+      <ul class="details-ul">
+          <li><strong>Genre: </strong>${data.Genre}</li>
+          <li><strong>Release Date: </strong>${data.DVD}</li>
+          <li><strong>Box Office: </strong>${data.BoxOffice}</li>
+          <li><strong>Movie Runtime: </strong>${data.Runtime}</li>
+      </ul>
+      <p style="font-size: 14px; margin-top:10px;">${data.Plot}</p>
+      <p style="font-size: 15px; font-style: italic; color: #222; margin-top: 10px;">
+          <i class="fa-solid fa-award"></i>
+          &thinsp; ${data.Awards}
+      </p>
+  </div> 
+  `
+  document.querySelector(".movie-content").innerHTML = output;
+
+
 
 
 }
@@ -105,11 +142,11 @@ function displayMovie(movies) {
 
   output += `<div class="card ">
                   <div class="card-poster">
-                  <img src= "${imgUrl}"  alt="Movie Poster"/>
+                  <a href="movie.html?id=${id}" ><img src= "${imgUrl}"  alt="Movie Poster"/></a>
                   </div>
-               <h1>Title: ${i.Title}</h1>
+                  <a href="movie.html?id=${id}" ><h5>Title: ${i.Title}</h5></a>
                <div class="flex card-info">
-            <p>Year: ${i.Year}</p>
+               <a href="movie.html?id=${id}" ><p>Year: ${i.Year}</p></a>
             <i class="fa-regular fa-lg fa-star" id="fav-icon" onclick= "addTofavrouitMovie('${id}', '${i.Title}')"></i>
             </div>
 
