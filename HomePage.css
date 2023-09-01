@@ -1,144 +1,127 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap");
 
-
-*{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-      animation: fadeInAnimation ease 2s;
-      background-color: #f5f5f5;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
+body {
+  animation: fadeInAnimation ease 2s;
+  background-color: #f5f5f5;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 @keyframes fadeInAnimation {
-      0% {
-          opacity: 0;
-      }
-  
-      100% {
-          opacity: 1;
-      }
+  0% {
+    opacity: 0;
   }
-  
-#nav{
-      position: fixed;
-     
-      background-color: #88cfcf;
-      overflow: hidden;
-      width: 100%;
-      top: 0;
-      z-index: 3;
-      min-width: 445px;
+
+  100% {
+    opacity: 1;
+  }
 }
 
+#nav {
+  position: fixed;
 
-
-
-.logo-img img{
-      max-width: 100px;
-      border-radius: 10px;
+  background-color: #88cfcf;
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+  min-width: 445px;
 }
 
-.search-input{
-      padding: 3px 50px;
-      font-size: 18px;
-      width: 400px;
-     
+.logo-img img {
+  max-width: 100px;
+  border-radius: 10px;
 }
-.search-input:focus{
-      outline: none;
+
+.search-input {
+  padding: 3px 50px;
+  font-size: 18px;
+  width: 400px;
 }
-.search-bar span{
-      
-   position: relative;
-   left: 30px;
-   top: 0;
+.search-input:focus {
+  outline: none;
+}
+.search-bar span {
+  position: relative;
+  left: 30px;
+  top: 0;
 }
 
 /* favorite button */
-.button{
-      
-      padding: 4px 15px;
-      background-color: #476b5e;
-      border-radius: 10px;
-      font-size: 20px;
-
+.button {
+  padding: 4px 15px;
+  background-color: #476b5e;
+  border-radius: 10px;
+  font-size: 20px;
 }
 .button:hover {
-      scale: 1.1;
+  scale: 1.1;
 }
-.button a{
-      text-decoration: none;
-      color: white;
+.button a {
+  text-decoration: none;
+  color: white;
 }
-
 
 /* movie card */
 
-#main{
-      padding-block: 20px;
-      margin-top: 80px;
-  }
-  
-
-.cards-container{
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-     
+#main {
+  padding-block: 20px;
+  margin-top: 80px;
 }
 
-.card{
-     width: 300px;
-      margin: 20px 30px ;
-      min-height: 400px;
-      box-shadow: 0 0 4px #d4ecd4;
-      border-radius: 4px;
-      cursor: pointer;
-      background-color: #fff;
-      overflow: hidden ;
-      transform: all 0.3s ease;
-     
+.cards-container {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.card:hover{
-      box-shadow: 1px 1px 8px #d4ecff;
-      background-color: #f9fdff;
-      transform: translateY(-2px);
-}
-.card a{
-      text-decoration: none;
-}
-
-.card p{
-      color: black;
-}
-
-.heading{
-      color:black;
-      margin: 5px 10px;
-      
-}
-.card-info{
-      display: flex;
-      justify-content: space-between;
-      margin: 5px 10px 0 10px;
-      align-items: baseline;
-     
+.card {
+  width: 300px;
+  margin: 20px 30px;
+  min-height: 400px;
+  box-shadow: 0 0 4px #d4ecd4;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  overflow: hidden;
+  transform: all 0.3s ease;
 }
 
-.card-info i:active{
-    color: red;
-      
-      
+.card:hover {
+  box-shadow: 1px 1px 8px #d4ecff;
+  background-color: #f9fdff;
+  transform: translateY(-2px);
+}
+.card a {
+  text-decoration: none;
+}
+
+.card p {
+  color: black;
+}
+
+.heading {
+  color: black;
+  margin: 5px 10px;
+}
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px 0 10px;
+  align-items: baseline;
+}
+
+.card-info i:active {
+  color: red;
 }
 
 @media screen and (max-width: 767px) {
-     
-      .navbar .collapse{
-          
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-    }}
+  .navbar .collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

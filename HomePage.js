@@ -110,7 +110,7 @@ function removeFav(id) {
 }
 
 // getting single movie details
-const singleMovie = async () => {
+async function singleMovie(){
   // find id from url
   let urlQueryParameters = new URLSearchParams(window.location.search);
   let id = urlQueryParameters.get("id");

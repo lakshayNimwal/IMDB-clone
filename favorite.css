@@ -4,16 +4,21 @@
   box-sizing: border-box;
 }
 
-.banner{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 2%;
-    background-color: #d4ecff;
-    align-items: center;
+.banner {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+  background-color: #d4ecff;
+  align-items: center;
 }
-.btn a{
-    color: white;
-    text-decoration: none;
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+#movie-page-header {
+  margin-bottom: 2%;
+  background-image: url();
 }
 
 /* Movie Container */
