@@ -4,14 +4,11 @@ const url = " http://www.omdbapi.com/?apikey=";
 var searchInput = document.getElementById("search-input");
 const favButton = document.getElementById("fav-button");
 
-
-
 // fetching the movies from api
 async function fetchMovies(query) {
   const res = await fetch(`${url}${api_key}&s=${query}`);
   const movies = await res.json();
 }
-
 
 // used to get every input from input tag
 searchInput.addEventListener("input", searchMovie);
@@ -24,15 +21,12 @@ async function searchMovie() {
   displayMovie(data.Search);
 }
 
-
-
 // this function is used to display movies on homepage.
 function displayMovie(movies) {
   const cardContainer = document.getElementById("cards-container");
 
   var output = "";
   for (var i of movies) {
-  
     var imgUrl = "";
     if (i.Poster != "N/A") {
       imgUrl = i.Poster;
@@ -41,7 +35,7 @@ function displayMovie(movies) {
     }
 
     var id = i.imdbID;
-// creating the html
+    // creating the html
     output += `<div class="card ">
                 <div class="card-poster">
                   <a href="movie.html?id=${id}" ><img src= "${imgUrl}"  alt="Movie Poster"/></a>
@@ -53,19 +47,16 @@ function displayMovie(movies) {
             </div>
 
             </div>`;
-    // appending to card container 
+    // appending output to card container
     cardContainer.innerHTML = output;
   }
 }
-
-
 
 // adding movies to favorites
 function addTofavrouitMovie(id, title) {
   localStorage.setItem(id, title);
   alert("Movie Added to favrouites");
 }
-
 
 async function favrouietMoviePage() {
   const favContainer = document.getElementById("fav-container");
@@ -111,7 +102,6 @@ async function favrouietMoviePage() {
   favContainer.innerHTML = favOutput;
 }
 
-
 // function to remove from favorites
 function removeFav(id) {
   localStorage.removeItem(id);
@@ -128,7 +118,7 @@ const singleMovie = async () => {
   const fetchUrl = `http://www.omdbapi.com/?i=${id}&apikey=${api_key}`;
   const res = await fetch(fetchUrl);
   const data = await res.json();
- 
+
   var output = `
 
   <div class="movie-poster">
@@ -168,4 +158,3 @@ const singleMovie = async () => {
   // appending output to element having class movie-content.
   document.querySelector(".movie-content").innerHTML = output;
 };
-
