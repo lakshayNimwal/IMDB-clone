@@ -72,7 +72,7 @@ async function favrouietMoviePage() {
   for (var i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
 
-    const fetchUrl = `http://www.omdbapi.com/?i=${key}&apikey=${api_key}`;
+    const fetchUrl = `https://www.omdbapi.com/?i=${key}&apikey=${api_key}`;
     const res = await fetch(fetchUrl);
     const movie = await res.json();
 
@@ -115,7 +115,7 @@ async function singleMovie(){
   let urlQueryParameters = new URLSearchParams(window.location.search);
   let id = urlQueryParameters.get("id");
   // fetching data with id
-  const fetchUrl = `http://www.omdbapi.com/?i=${id}&apikey=${api_key}`;
+  const fetchUrl = `https://www.omdbapi.com/?i=${id}&apikey=${api_key}`;
   const res = await fetch(fetchUrl);
   const data = await res.json();
 
