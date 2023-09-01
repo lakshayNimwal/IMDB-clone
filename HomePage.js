@@ -1,5 +1,5 @@
 const api_key = "16f6c78";
-const url = " http://www.omdbapi.com/?apikey=";
+const url = " https://www.omdbapi.com/?apikey=";
 
 var searchInput = document.getElementById("search-input");
 const favButton = document.getElementById("fav-button");
